@@ -1,0 +1,15 @@
+.percent{
+	float:left;margin-left:10px
+}
+.percent-top{
+	width:80%;float:left
+}
+.clearall{
+	clear: both
+}
+.progress-bar-middle{
+	background-color: #f39c12;
+}
+.progress-bar-start{
+	background-color: red;
+}
