@@ -82,11 +82,11 @@
         <div class='panel-body filters'>
           <div class='row'>
             <div class='col-md-9'>
-              Add your custom filters here...
+
             </div>
             <div class='col-md-3'>
               <div class='input-group'>
-                <input class='form-control' placeholder='Quick search...' type='text'>
+                <input class='form-control' placeholder='Quick search...' type='text'  [(ngModel)]="searchQuick">
                   <span class='input-group-btn'>
                     <button class='btn' type='button'>
                       <i class='icon-search'></i>
@@ -100,14 +100,14 @@
         <table class='table'>
           <thead>
           <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Local Backup</th>
+            <th style="width:2%">#</th>
+            <th style="width:13%">Name</th>
+            <th style="width:42%">Local Backup</th>
             <th>Cloud Backup</th>
           </tr>
           </thead>
           <tbody>
-          <tr class='success1' *ngFor='let vm of data.VM;#i = index;'>
+          <tr class='success1' *ngFor='let vm of data.VM | filter:searchQuick;#i = index '>
             <td>{{i+1}}</td>
             <td><i class="fa fa-fw" [ngClass]="{'fa-linux': vm.sys === 'lin','fa-windows': vm.sys === 'win' }" ></i>&nbsp;{{vm.name}}</td>
             <td>
@@ -116,7 +116,7 @@
                 <div class="progress-bar progress-bar-start" [ngClass]="{'progress-bar-start': vm.LocalBackup.restorePercent < '30','progress-bar-middle': vm.LocalBackup.restorePercent <= '60' && vm.LocalBackup.restorePercent > '30' ,'progress-bar-success': vm.LocalBackup.restorePercent >'60'}" [style.width]="vm.LocalBackup.restorePercent + '%'"></div>
               </div>
               <div *ngIf="vm.LocalBackup.restorePercent != '' " class="badge bg-green percent" [ngClass]="{'progress-bar-start': vm.LocalBackup.restorePercent < '30','progress-bar-middle': vm.LocalBackup.restorePercent <= '60' && vm.LocalBackup.restorePercent > '30' ,'progress-bar-success': vm.LocalBackup.restorePercent >'60'}">{{vm.LocalBackup.restorePercent}}%</div>
-
+              <!--<div *ngIf="vm.LocalBackup.restorePercent != '' " class="badge bg-green percent" [ngClass]="{'progress-bar-start': vm.LocalBackup.restorePercent < '30','progress-bar-middle': vm.LocalBackup.restorePercent <= '60' && vm.LocalBackup.restorePercent > '30' ,'progress-bar-success': vm.LocalBackup.restorePercent >'60'}"> <input id="updatePercent{{i}}" type="text" [(ngModel)]="updatePercent" />% </div>-->
 
               <div class='action clearall'>
                 <div *ngIf="vm.LocalBackup.enable === 'true'" class='btn btn-success' data-toggle='tooltip' (click)="modal.open()" title='Enable'>
