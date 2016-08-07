@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import {ROUTER_DIRECTIVES} from '@angular/router';
+import { Router, ROUTER_DIRECTIVES  } from '@angular/router';
 
 
 import 'rxjs/add/operator/toPromise';
@@ -10,13 +10,16 @@ import 'rxjs/add/operator/toPromise';
     selector: 'my-login',
     templateUrl: 'app/login/login.component.html',
     styleUrls: ['app/login/login.component.css'],
-
-    directives: [ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES ]
 })
 
 export class LoginComponent implements OnInit{
-    constructor(private http: Http) {
-        this.http = http;
+    constructor(
+        private http: Http,
+        private _router: Router) {
+        this.http    = http;
+        this._router = _router;
+
     }
     data: any;
     result: Object;
@@ -27,6 +30,17 @@ export class LoginComponent implements OnInit{
                 this.data = res.json();
                 () => console.log('done',res.json())
             });
+        console.log("here");
+    };
+    dataForm = {};
+    forSubmit(){
+        if(this.data.username == 'admin' && this.data.password == 'admin'){
+            console.log("Hello admin");
+            this._router.navigate(['/dashboard']);
+        }
+        else{
+            console.log('Who the f are you');
+        }
     }
     // onSelect() {
     //     this.router.navigate(['/dashboard']);

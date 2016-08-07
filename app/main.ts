@@ -8,6 +8,7 @@ bootstrap(AppComponent, [
   appRouterProviders,
   HTTP_PROVIDERS,
   MODAL_DIRECTIVES
+
 ]);
 
 

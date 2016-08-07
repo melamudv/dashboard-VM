@@ -13,9 +13,12 @@ var http_1 = require('@angular/http');
 var router_1 = require('@angular/router');
 require('rxjs/add/operator/toPromise');
 var LoginComponent = (function () {
-    function LoginComponent(http) {
+    function LoginComponent(http, _router) {
         this.http = http;
+        this._router = _router;
+        this.dataForm = {};
         this.http = http;
+        this._router = _router;
     }
     LoginComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -25,6 +28,17 @@ var LoginComponent = (function () {
             _this.data = res.json();
             (function () { return console.log('done', res.json()); });
         });
+        console.log("here");
+    };
+    ;
+    LoginComponent.prototype.forSubmit = function () {
+        if (this.data.username == 'admin' && this.data.password == 'admin') {
+            console.log("Hello admin");
+            this._router.navigate(['/dashboard']);
+        }
+        else {
+            console.log('Who the f are you');
+        }
     };
     LoginComponent = __decorate([
         core_1.Component({
@@ -33,7 +47,7 @@ var LoginComponent = (function () {
             styleUrls: ['app/login/login.component.css'],
             directives: [router_1.ROUTER_DIRECTIVES]
         }), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [http_1.Http, router_1.Router])
     ], LoginComponent);
     return LoginComponent;
 }());

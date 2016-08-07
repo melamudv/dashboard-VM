@@ -1,4 +1,5 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
+
 import 'rxjs/add/operator/toPromise';
 import { Http, Response } from '@angular/http';
 import { MODAL_DIRECTIVES  } from 'ng2-bs3-modal/ng2-bs3-modal';
@@ -40,6 +41,9 @@ export class DashboardComponent implements OnInit {
   // updatePercent(value: number){
   //   console.log(value);
   // }
+  refresh() {   
+    this.ngOnInit();
+  }
 onSelect() {
     // let link = ['/dashboard'];
     // this.router.navigate(link);

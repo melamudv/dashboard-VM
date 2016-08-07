@@ -16,4 +16,8 @@ export class ArrayFilterPipe implements PipeTransform {
             return true;
         });
     }
+
+    // transform(vms: Array<any>, args: any[]): any {
+    //     return vms.filter(vm => vm.name.toLowerCase().indexOf(args[0].toLowerCase()) !== -1);
+    // }
 }

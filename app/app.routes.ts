@@ -10,7 +10,7 @@ const routes: RouterConfig = [
     component: LoginComponent
   },
   {
-    path: 'dashboard', 
+    path: 'dashboard',
     component: DashboardComponent
   }
 

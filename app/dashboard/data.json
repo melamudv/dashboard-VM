@@ -9,7 +9,7 @@
 				"enable": "true",
 				"disable": "true",
 				"restore": "true",
-				"restorePercent": "20"
+				"restorePercent": "60"
 			},
 			"CloudBackup": {
 				"enable": "true",

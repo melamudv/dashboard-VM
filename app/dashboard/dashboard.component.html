@@ -68,7 +68,21 @@
     <section id='tools'>
       <ul class='breadcrumb' id='breadcrumb'>
         <li class='title'>Backup</li>
+        <li class="pull-right col-xs-10" >
+          <div class='col-md-3 pull-right'>
+            <div class='input-group'>
+              <input class='form-control' placeholder='Quick search...' type='text'  [(ngModel)]="searchQuick">
+                  <span class='input-group-btn'>
+                    <button class='btn' type='button'>
+                      <i class='icon-search'></i>
+                    </button>
+                  </span>
+            </div>
+          </div>
+        </li>
+        <li><button class="btn btn-danger" (click)="refresh()" style="color:white">Refresh Data</button></li>
       </ul>
+
       <div id='toolbar'>
       </div>
     </section>
@@ -85,14 +99,7 @@
 
             </div>
             <div class='col-md-3'>
-              <div class='input-group'>
-                <input class='form-control' placeholder='Quick search...' type='text'  [(ngModel)]="searchQuick">
-                  <span class='input-group-btn'>
-                    <button class='btn' type='button'>
-                      <i class='icon-search'></i>
-                    </button>
-                  </span>
-              </div>
+
             </div>
           </div>
         </div>
@@ -150,120 +157,6 @@
               </div>
             </td>
           </tr>
-          <!--<tr class='success1'>-->
-            <!--<td>2</td>-->
-            <!--<td><i class="fa fa-fw fa-windows"></i>&nbsp;VM-2</td>-->
-            <!--<td>-->
-              <!--<div class="progress progress-xs progress-striped active percent-top">-->
-                <!--<div class="progress-bar progress-bar-start" style="width: 20%"></div>-->
-              <!--</div>-->
-              <!--<div class="badge bg-green percent progress-bar-start" >20%</div>-->
-              <!--<div class='action clearall'>-->
-                <!--<a class='btn btn-success' data-toggle='tooltip' href='#' title='Enable'>-->
-                  <!--<i class='icon-check'></i>&nbsp;Enable-->
-                <!--</a>-->
-                <!--<a class='btn btn-info'data-toggle='tooltip' href='#' title='Restore'>-->
-                  <!--<i class='icon-refresh'></i>&nbsp;Restore-->
-                <!--</a>-->
-                <!--<a class='btn btn-danger' data-toggle='tooltip' href='#' title='Disable'>-->
-                  <!--<i class='icon-remove'></i>&nbsp;Disable-->
-                <!--</a>-->
-              <!--</div>-->
-            <!--</td>-->
-            <!--<td>-->
-              <!--<div class="progress progress-xs progress-striped active percent-top">-->
-                <!--<div class="progress-bar progress-bar-start" style="width: 20%"></div>-->
-              <!--</div>-->
-              <!--<div class="badge bg-green percent progress-bar-start" >20%</div>-->
-              <!--<div class='action clearall'>-->
-                <!--<a class='btn btn-success' data-toggle='tooltip' href='#' title='Enable'>-->
-                  <!--<i class='icon-check'></i>&nbsp;Enable-->
-                <!--</a>-->
-                <!--<a class='btn btn-info'data-toggle='tooltip' href='#' title='Restore'>-->
-                  <!--<i class='icon-refresh'></i>&nbsp;Rehydrate-->
-                <!--</a>-->
-                <!--<a class='btn btn-danger' data-toggle='tooltip' href='#' title='Disable'>-->
-                  <!--<i class='icon-remove'></i>&nbsp;Disable-->
-                <!--</a>-->
-              <!--</div>-->
-            <!--</td>-->
-          <!--</tr>-->
-          <!--<tr class='success1'>-->
-            <!--<td>3</td>-->
-            <!--<td><i class="fa fa-fw fa-linux"></i>&nbsp;VM-3</td>-->
-            <!--<td>-->
-              <!--<div class="progress progress-xs progress-striped active percent-top">-->
-                <!--<div class="progress-bar progress-bar-middle" style="width: 70%"></div>-->
-              <!--</div>-->
-              <!--<div class="badge bg-green percent progress-bar-middle" >70%</div>-->
-              <!--<div class='action clearall'>-->
-                <!--<a class='btn btn-success' data-toggle='tooltip' href='#' title='Enable'>-->
-                  <!--<i class='icon-check'></i>&nbsp;Enable-->
-                <!--</a>-->
-                <!--<a class='btn btn-info'data-toggle='tooltip' href='#' title='Restore'>-->
-                  <!--<i class='icon-refresh'></i>&nbsp;Restore-->
-                <!--</a>-->
-                <!--<a class='btn btn-danger' data-toggle='tooltip' href='#' title='Disable'>-->
-                  <!--<i class='icon-remove'></i>&nbsp;Disable-->
-                <!--</a>-->
-              <!--</div>-->
-            <!--</td>-->
-            <!--<td>-->
-              <!--<div class="progress progress-xs progress-striped active percent-top">-->
-                <!--<div class="progress-bar progress-bar-middle" style="width: 70%"></div>-->
-              <!--</div>-->
-              <!--<div class="badge bg-green percent progress-bar-middle" >70%</div>-->
-              <!--<div class='action clearall'>-->
-                <!--<div class='btn btn-success' data-toggle='tooltip' (click)="modal.open()" title='Enable'>-->
-                  <!--<i class='icon-check'></i>&nbsp;Enable-->
-                <!--</div>-->
-                <!--<a class='btn btn-info'data-toggle='tooltip' href='#' title='Restore'>-->
-                  <!--<i class='icon-refresh'></i>&nbsp;Rehydrate-->
-                <!--</a>-->
-                <!--<a class='btn btn-danger' data-toggle='tooltip' href='#' title='Disable'>-->
-                  <!--<i class='icon-remove'></i>&nbsp;Disable-->
-                <!--</a>-->
-              <!--</div>-->
-            <!--</td>-->
-          <!--</tr>-->
-          <!--<tr class='success1'>-->
-            <!--<td>4</td>-->
-            <!--<td><i class="fa fa-fw fa-windows"></i>&nbsp;VM-4</td>-->
-            <!--<td>-->
-              <!--<div class="progress progress-xs progress-striped active percent-top">-->
-                <!--<div class="progress-bar progress-bar-success" style="width: 90%"></div>-->
-              <!--</div>-->
-              <!--<div class="badge bg-green percent progress-bar-success" >90%</div>-->
-              <!--<div class='action clearall'>-->
-                <!--<a class='btn btn-success' data-toggle='tooltip' href='#' title='Enable'>-->
-                  <!--<i class='icon-check'></i>&nbsp;Enable-->
-                <!--</a>-->
-                <!--<a class='btn btn-info'data-toggle='tooltip' href='#' title='Restore'>-->
-                  <!--<i class='icon-refresh'></i>&nbsp;Restore-->
-                <!--</a>-->
-                <!--<a class='btn btn-danger' data-toggle='tooltip' href='#' title='Disable'>-->
-                  <!--<i class='icon-remove'></i>&nbsp;Disable-->
-                <!--</a>-->
-              <!--</div>-->
-            <!--</td>-->
-            <!--<td>-->
-              <!--<div class="progress progress-xs progress-striped active percent-top">-->
-                <!--<div class="progress-bar progress-bar-success" style="width: 90%"></div>-->
-              <!--</div>-->
-              <!--<div class="badge bg-green percent progress-bar-success" >90%</div>-->
-              <!--<div class='action clearall'>-->
-                <!--<a class='btn btn-success' data-toggle='tooltip' href='#' title='Enable'>-->
-                  <!--<i class='icon-check'></i>&nbsp;Enable-->
-                <!--</a>-->
-                <!--<a class='btn btn-info'data-toggle='tooltip' href='#' title='Restore'>-->
-                  <!--<i class='icon-refresh'></i>&nbsp;Rehydrate-->
-                <!--</a>-->
-                <!--<a class='btn btn-danger' data-toggle='tooltip' href='#' title='Disable'>-->
-                  <!--<i class='icon-remove'></i>&nbsp;Disable-->
-                <!--</a>-->
-              <!--</div>-->
-            <!--</td>-->
-          <!--</tr>-->
           <modal #modal>
             <modal-header [show-close]="true">
               <h4 class="modal-title">I'm a modal!</h4>

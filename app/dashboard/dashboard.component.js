@@ -31,6 +31,9 @@ var DashboardComponent = (function () {
     // updatePercent(value: number){
     //   console.log(value);
     // }
+    DashboardComponent.prototype.refresh = function () {
+        this.ngOnInit();
+    };
     DashboardComponent.prototype.onSelect = function () {
         // let link = ['/dashboard'];
         // this.router.navigate(link);
