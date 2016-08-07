@@ -1,0 +1,163 @@
+{
+	"VCenter": [{
+		"nameVCenter": "VCenter-1",
+
+		"VM": [{
+			"name": "VM-1",
+			"sys":	"win",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "true",
+				"restore": "true",
+				"restorePercent": "60"
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "20"
+			}
+		}, {
+			"name": "VM-2",
+			"sys":	"lin",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "false",
+				"restore": "true",
+				"restorePercent": "40"
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "40"
+			}
+		}, {
+			"name": "VM-3",
+			"sys":	"lin",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "false",
+				"restore": "true",
+				"restorePercent": ""
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "60"
+			}
+		}, {
+			"name": "VM-4",
+			"sys":	"win",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "false",
+				"restore": "true",
+				"restorePercent": "80"
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "80"
+			}
+		}, {
+			"name": "VM-5",
+			"sys":	"win",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "false",
+				"restore": "true",
+				"restorePercent": "75"
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "75"
+			}
+		}]
+
+	}, {
+		"nameVCenter": "VCenter-2",
+
+		"VM": [{
+			"name": "VM-1",
+			"sys":	"lin",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "false",
+				"restore": "true",
+				"restorePercent": "20"
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "20"
+			}
+		}, {
+			"name": "VM-2",
+			"sys":	"win",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "false",
+				"restore": "true",
+				"restorePercent": "40"
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "40"
+			}
+		}, {
+			"name": "VM-3",
+			"sys":	"lin",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "false",
+				"restore": "true",
+				"restorePercent": "60"
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "60"
+			}
+		}, {
+			"name": "VM-4",
+			"sys":	"win",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "false",
+				"restore": "true",
+				"restorePercent": "80"
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "80"
+			}
+		}, {
+			"name": "VM-5",
+			"sys":	"lin",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "false",
+				"restore": "true",
+				"restorePercent": "90"
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "90"
+			}
+		}]
+
+	}]
+}

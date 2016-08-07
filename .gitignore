@@ -47,4 +47,4 @@ npm-debug.log
 
 # rollup-test output
 /modules/rollup-test/dist/
-/app/menuleft/index.ts
+

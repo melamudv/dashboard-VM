@@ -1,0 +1,24 @@
+<i class='icon-align-justify icon-large' id='toggle'></i>
+<ul id='dock'>
+    <li class='launcher'  [class.active]="router.url==='/home'">
+        <i class='icon-bookmark'></i>
+        <a  [routerLink]="['/home']">Home</a>
+    </li>
+    <li class='launcher'>
+        <i class='icon-dashboard'  [class.active]="router.url==='/dashboard'"></i>
+        <a  [routerLink]="['/dashboard']">Dashboard</a>
+    </li>
+    <li class='launcher'>
+        <i class='icon-tasks'></i>
+        <a  [routerLink]="['/dashboard']">Catalog</a>
+    </li>
+    <li class='launcher'>
+        <i class='icon-table'></i>
+        <a  [routerLink]="['/dashboard']">Networking</a>
+    </li>
+    <li class='launcher'>
+        <i class='icon-bug'></i>
+        <a  [routerLink]="['/dashboard']">Policies</a>
+    </li>
+</ul>
+<div data-toggle='tooltip' id='beaker' title='Made by lab2023'></div>

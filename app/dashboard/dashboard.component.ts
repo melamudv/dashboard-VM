@@ -5,12 +5,13 @@ import { Http, Response } from '@angular/http';
 import { MODAL_DIRECTIVES  } from 'ng2-bs3-modal/ng2-bs3-modal';
 import values = require("core-js/fn/array/values");
 import { ArrayFilterPipe } from './array-filter.pipe';
+import { MenuLeft } from './../menuleft/menuleft.component';
 
 
 
 @Component({
   selector: 'my-dashboard',
-  directives: [MODAL_DIRECTIVES],
+  directives: [MODAL_DIRECTIVES, MenuLeft],
   pipes: [ArrayFilterPipe],
   templateUrl: 'app/dashboard/dashboard.component.html',
   styleUrls: ['app/dashboard/dashboard.component.css']

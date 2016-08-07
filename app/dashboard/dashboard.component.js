@@ -13,6 +13,7 @@ require('rxjs/add/operator/toPromise');
 var http_1 = require('@angular/http');
 var ng2_bs3_modal_1 = require('ng2-bs3-modal/ng2-bs3-modal');
 var array_filter_pipe_1 = require('./array-filter.pipe');
+var menuleft_component_1 = require('./../menuleft/menuleft.component');
 var DashboardComponent = (function () {
     function DashboardComponent(http) {
         this.http = http;
@@ -41,7 +42,7 @@ var DashboardComponent = (function () {
     DashboardComponent = __decorate([
         core_1.Component({
             selector: 'my-dashboard',
-            directives: [ng2_bs3_modal_1.MODAL_DIRECTIVES],
+            directives: [ng2_bs3_modal_1.MODAL_DIRECTIVES, menuleft_component_1.MenuLeft],
             pipes: [array_filter_pipe_1.ArrayFilterPipe],
             templateUrl: 'app/dashboard/dashboard.component.html',
             styleUrls: ['app/dashboard/dashboard.component.css']
