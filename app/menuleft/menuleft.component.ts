@@ -3,6 +3,7 @@ import { Router, ROUTER_DIRECTIVES  } from '@angular/router';
 
 
 
+
 @Component({
     selector: 'menu-left', 
     templateUrl: 'app/menuleft/menuleft.component.html',

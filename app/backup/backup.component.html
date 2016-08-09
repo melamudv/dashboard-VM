@@ -1,0 +1,192 @@
+<div class='main page'>
+    <div class='navbar navbar-default' id='navbar'>
+        <a class='navbar-brand' href='#'>
+            <i class='icon-cloud'></i>
+            Loony Tunes SP
+        </a>
+        <ul class='nav navbar-nav pull-right'>
+            <li class='dropdown'>
+                <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+                    <i class='icon-envelope'></i>
+                    Messages
+                    <span class='badge'>5</span>
+                    <b class='caret'></b>
+                </a>
+                <ul class='dropdown-menu'>
+                    <li>
+                        <a href='#'>New message</a>
+                    </li>
+                    <li>
+                        <a href='#'>Inbox</a>
+                    </li>
+                    <li>
+                        <a href='#'>Out box</a>
+                    </li>
+                    <li>
+                        <a href='#'>Trash</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href='#'>
+                    <i class='icon-cog'></i>
+                    Settings
+                </a>
+            </li>
+            <li class='dropdown user'>
+                <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+                    <i class='icon-user'></i>
+                    <strong>Annie Oakley,  Acme Industries
+                    </strong>
+                    <img class="img-rounded" src="http://placehold.it/20x20/ccc/777" />
+                    <b class='caret'></b>
+                </a>
+                <ul class='dropdown-menu'>
+                    <li>
+                        <a href='#'>Edit Profile</a>
+                    </li>
+                    <li class='divider'></li>
+                    <li>
+                        <a href="/">Sign out</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id='wrapper'>
+        <!-- Sidebar -->
+        <section id='sidebar'>
+            <menu-left></menu-left>
+        </section>
+
+        <!-- Tools -->
+        <section id='tools'>
+            <ul class='breadcrumb' id='breadcrumb'>
+                <li class='title'>Catalog</li>
+                <li class='title'>Data Protection </li>
+                <li class='title'>Backup</li>
+                <li class="pull-right col-xs-7 before-remove" >
+                    <div class='col-md-5 pull-right fix-top '>
+                        <div class='input-group'>
+                            <input class='form-control' placeholder='Quick search...' type='text'  [(ngModel)]="searchQuick">
+                  <span class='input-group-btn'>
+                    <button class='btn' type='button'>
+                      <i class='icon-search'></i>
+                    </button>
+                  </span>
+                        </div>
+                    </div>
+                </li>
+                <li><button class="btn fix-top btn-danger" (click)="refresh()" style="color:white">Refresh Data</button></li>
+            </ul>
+
+            <div id='toolbar'>
+            </div>
+        </section>
+        <!-- Content -->
+        <div id='content'>
+            <div class='panel panel-default grid' *ngFor='#data of VCenter'>
+                <div class='panel-heading' style="height: 46px">
+                    <div class="col-xs-11">
+                        <i class='icon-table icon-large'></i>
+                        {{data.nameVCenter}}
+                    </div>
+                    <div class="col-xs-1">
+                    <button class="btn fix-top btn-success" (click)="modalSubmit.open()" style="color:white">Submit</button>
+                    </div>
+                </div>
+                <div class='panel-body'>
+                    <table class='table table-bordered'>
+                        <thead>
+                        <tr>
+                            <th class="remove-border" style="width:2%;"></th>
+                            <th class="remove-border" style="width:15%;"></th>
+                            <th style="width:15%;"></th>
+                            <th style="width: 34%" class='title-new'>Local Backup</th>
+                            <th style="width: 34%" class='title-new'>Cloud  Backup</th>
+                        </tr>
+                        <tr >
+                            <th>#</th>
+                            <th class="remove-border">VM Name</th>
+                            <th >Group</th>
+                            <th>
+                                <table width="100%">
+                                    <th style="width: 40%">Policy</th>
+                                    <th style="width: 45%">Last Backup</th>
+                                    <th style="width: 15%">Size</th>
+                                </table>
+                            </th>
+                            <th>
+                                <table width="100%">
+                                    <th style="width: 40%">Policy</th>
+                                    <th style="width: 45%">Last Backup</th>
+                                    <th style="width: 15%">Size</th>
+                                </table>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr  *ngFor='let backup of data.VM | filter:searchQuick;#i = index '>
+                            <td>{{i+1}}</td>
+                            <td><i class="fa fa-fw" [ngClass]="{'fa-linux': backup.sys === 'lin','fa-windows': backup.sys === 'win' }" ></i>&nbsp;{{backup.name}}</td>
+                            <td>{{backup.group}}</td>
+                            <td>
+                                <table width="100%">
+                                    <tr>
+                                        <td style="width: 40%">{{backup.LocalBackup.policy}}</td>
+                                        <td style="width: 45%" *ngIf="backup.LocalBackup.lastbackup != ''">
+                                            {{backup.LocalBackup.lastbackup | date:'mediumDate'}} {{backup.LocalBackup.lastbackup | date: 'shortTime'}}&nbsp;<i class="fa  " [ngClass]="{'success fa-check': backup.LocalBackup.success === 'true','no-success fa-close':backup.LocalBackup.success === 'false' }" aria-hidden="true"></i>
+                                        </td>
+                                        <td style="width: 45%" *ngIf="backup.LocalBackup.lastbackup === ''">
+
+                                        </td>
+                                        <td style="width: 15%">{{backup.LocalBackup.size}}</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>
+                                <table width="100%">
+                                    <tr>
+                                        <td *ngIf="backup.CloudBackup.policy != ''" style="width: 40%">{{backup.CloudBackup.policy}}</td>
+                                        <td style="width: 45%" *ngIf="backup.CloudBackup.lastbackup != ''">
+                                            {{backup.CloudBackup.lastbackup | date:'mediumDate'}} {{backup.CloudBackup.lastbackup | date: 'shortTime'}}&nbsp;<i class="fa  " [ngClass]="{'success fa-check': backup.CloudBackup.success === 'true','no-success fa-close':backup.CloudBackup.success === 'false' }" aria-hidden="true"></i>
+                                        </td>
+                                        <td colspn="2" style="width: 45%" *ngIf="backup.CloudBackup.lastbackup === ''">
+                                            <select  (change)="onSelect($event.target.value, backup.name)" name="sel2">
+                                                <option>Select Policy</option>
+                                                <option   *ngFor="#dataPolicy of Policy" [value]="dataPolicy.PolicyName">{{dataPolicy.PolicyName}}</option>
+                                            </select>
+                                        </td>
+                                        <td style="width: 15%">{{backup.CloudBackup.size}}</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <modal #modal>
+                                <modal-header [show-close]="true">
+                                    <h2 class="modal-title">Local Backup Required</h2>
+                                </modal-header>
+                                <modal-body>
+                                    <h3>Local backup is required to activate cloud backup<br>
+                                        Add local backup policy for VM: <strong>{{namePolicy}}</strong></h3>
+                                </modal-body>
+                                <modal-footer [show-default-buttons]="true"></modal-footer>
+                            </modal>
+                        </tr>
+                        <modal #modalSubmit>
+                            <modal-header [show-close]="true">
+                                <h2 class="modal-title">Cloud Backup</h2>
+                            </modal-header>
+                            <modal-body>
+                                <div><h4>Number of VMs Added: <strong>3</strong></h4></div>
+                                <div><h4>Total monthly Storage : <strong>250GB</strong></h4></div><br>
+                                <div><h4> Estimated Monthly Cost: <strong>37$</strong></h4></div>
+                            </modal-body>
+                            <modal-footer [show-default-buttons]="true"></modal-footer>
+                        </modal>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

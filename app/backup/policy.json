@@ -1,0 +1,23 @@
+{	
+	"Policy": [{
+		"PolicyType": "backup",
+		"PolicyName": "Gold Weekly",
+		"id":	"0001"			
+	}, {
+		"PolicyType": "backup",
+		"PolicyName": "Weekly",
+		"id":	"0002"	
+	}, {
+		"PolicyType": "backup",
+		"PolicyName": "Gold Daily",
+		"id":	"0003"	
+	}, {
+		"PolicyType": "backup",
+		"PolicyName": "Daily",
+		"id":	"0004"	
+	}, {
+		"PolicyType": "backup",
+		"PolicyName": "Gold Monthly",
+		"id":	"0005"	
+	}]
+}

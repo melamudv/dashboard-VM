@@ -8,9 +8,25 @@
         <i class='icon-dashboard'  [class.active]="router.url==='/dashboard'"></i>
         <a  [routerLink]="['/dashboard']">Dashboard</a>
     </li>
-    <li class='launcher'>
+    <li class='launcher dropdown hover'>
         <i class='icon-tasks'></i>
-        <a  [routerLink]="['/dashboard']">Catalog</a>
+        <a  [routerLink]="['/catalog']">Catalog</a>
+        <ul class='dropdown-menu'>
+            <li>
+                <a href='#'>Storage</a>
+            </li>
+            <li>
+                <a href='#'>Compute</a>
+            </li>
+            <li>
+                <a href='#'>Data Protection</a>
+                <ul class='dropdown-menu-new'>
+                    <li class='level2'><a [routerLink]="['/catalog/backup']">Backup</a></li>
+                    <li class='level2'><a>Disaster Recovery</a></li>
+                    <li class='level2'><a>Replication</a></li>
+                </ul>
+            </li>
+        </ul>
     </li>
     <li class='launcher'>
         <i class='icon-table'></i>

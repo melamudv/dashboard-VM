@@ -33,8 +33,7 @@ var LoginComponent = (function () {
     ;
     LoginComponent.prototype.forSubmit = function () {
         if (this.data.username == 'admin' && this.data.password == 'admin') {
-            console.log("Hello admin");
-            this._router.navigate(['/dashboard']);
+            this._router.navigate(['/catalog/backup']);
         }
         else {
             console.log('Who the f are you');

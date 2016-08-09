@@ -42,10 +42,10 @@ export class DashboardComponent implements OnInit {
   // updatePercent(value: number){
   //   console.log(value);
   // }
-  refresh() {   
+  refresh() {
     this.ngOnInit();
   }
-onSelect() {
+  onSelect() {
     // let link = ['/dashboard'];
     // this.router.navigate(link);
   }

@@ -1,0 +1,20 @@
+.before-remove:before{
+    display: none;
+}
+.fix-top{
+    margin-top:-5px;
+}
+.table-bordered>thead>tr>th.remove-border{
+    border-right:1px solid #fff;
+}
+.title-new{
+    font-weight: 800;
+    color: #1abc9c;
+    padding-left: 23px;
+}
+.success{
+    color:green;
+}
+.no-success{
+    color:red;
+}

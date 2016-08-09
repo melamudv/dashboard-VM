@@ -34,9 +34,8 @@ export class LoginComponent implements OnInit{
     };
     dataForm = {};
     forSubmit(){
-        if(this.data.username == 'admin' && this.data.password == 'admin'){
-            console.log("Hello admin");
-            this._router.navigate(['/dashboard']);
+        if(this.data.username == 'admin' && this.data.password == 'admin'){           
+            this._router.navigate(['/catalog/backup']);
         }
         else{
             console.log('Who the f are you');

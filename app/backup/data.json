@@ -1,0 +1,127 @@
+{
+	"VCenter": [{
+		"nameVCenter": "VCenter-1",
+		"VM": [{
+			"name": "VM001",
+			"group": "Application_1",
+			"sys":	"win",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "true",
+				"restore": "true",
+				"restorePercent": "60",
+				"policy": "Weekly",
+				"lastbackup": "2001-12-19T00:00:00",
+				"size": "55GB",
+				"success": "true"
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "20",
+				"policy": "Weekly",
+				"lastbackup": "2001-12-19T00:00:00",
+				"size": "80GB",
+				"success": "true"
+			}
+		}, {
+			"name": "VM003",
+			"group": "Application_2",
+			"sys":	"lin",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "true",
+				"restore": "true",
+				"restorePercent": "60",
+				"policy": "Weekly",
+				"lastbackup": "2001-12-19T00:00:00",
+				"size": "133GB",
+				"success": "false"
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "20",
+				"policy": "Weekly",
+				"lastbackup": "2001-12-19T00:00:00",
+				"size": "80GB",
+				"success": "false"
+			}
+		}, {
+			"name": "DB_server01",
+			"group": "CRM_prod",
+			"sys":	"win",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "true",
+				"restore": "true",
+				"restorePercent": "60",
+				"policy": "Weekly",
+				"lastbackup": "2001-12-19T00:00:00",
+				"size": "120GB",
+				"success": "false"
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "20",
+				"policy": "",
+				"lastbackup": "",
+				"size": "",
+				"success": ""
+			}
+		}, {
+			"name": "DB_server02",
+			"group": "CRM_prod",
+			"sys":	"lin",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "true",
+				"restore": "true",
+				"restorePercent": "60",
+				"policy": "",
+				"lastbackup": "",
+				"size": "",
+				"success": "false"
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "20",
+				"policy": "",
+				"lastbackup": "",
+				"size": "",
+				"success": "false"
+			}
+		}, {
+			"name": "VM001",
+			"group": "CRM_prod",
+			"sys":	"win",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "true",
+				"restore": "true",
+				"restorePercent": "60",
+				"policy": "",
+				"lastbackup": "",
+				"size": "",
+				"success": "false"
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "20",
+				"policy": "",
+				"lastbackup": "",
+				"size": "",
+				"success": "false"
+			}
+		}]
+
+	}]
+}
