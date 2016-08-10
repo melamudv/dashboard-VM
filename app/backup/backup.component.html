@@ -36,8 +36,7 @@
             <li class='dropdown user'>
                 <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
                     <i class='icon-user'></i>
-                    <strong>Annie Oakley,  Acme Industries
-                    </strong>
+                    <strong style="color:#000;font-size: 18px;">Annie Oakley,  Acme Industries</strong>
                     <img class="img-rounded" src="http://placehold.it/20x20/ccc/777" />
                     <b class='caret'></b>
                 </a>
@@ -77,7 +76,7 @@
                         </div>
                     </div>
                 </li>
-                <li><button class="btn fix-top btn-danger" (click)="refresh()" style="color:white">Refresh Data</button></li>
+                <li><button class="btn fix-top btn-danger" (click)="refresh()" style="color:white"><i class="fa fa-refresh"></i>&nbsp;Refresh</button></li>
             </ul>
 
             <div id='toolbar'>
@@ -102,14 +101,16 @@
                             <th class="remove-border" style="width:2%;"></th>
                             <th class="remove-border" style="width:15%;"></th>
                             <th style="width:15%;"></th>
-                            <th style="width: 34%" class='title-new'>Local Backup</th>
+                            <th *ngIf="collapseValue === true" style="width: 8%;cursor:pointer" class='title-new' (click)="collapseMenu(collapseValue)">Local Backup</th>
+                            <th *ngIf="collapseValue === false" style="width: 34%;cursor:pointer" class='title-new' (click)="collapseMenu(collapseValue)">Local Backup</th>
                             <th style="width: 34%" class='title-new'>Cloud  Backup</th>
                         </tr>
                         <tr >
                             <th>#</th>
                             <th class="remove-border">VM Name</th>
                             <th >Group</th>
-                            <th>
+                            <th *ngIf="collapseValue === true" class="text-center" (click)="collapseMenu(collapseValue)" style="cursor: pointer">(+)</th>
+                            <th *ngIf="collapseValue === false">
                                 <table width="100%">
                                     <th style="width: 40%">Policy</th>
                                     <th style="width: 45%">Last Backup</th>
@@ -118,9 +119,10 @@
                             </th>
                             <th>
                                 <table width="100%">
-                                    <th style="width: 40%">Policy</th>
-                                    <th style="width: 45%">Last Backup</th>
+                                    <th style="width: 35%">Policy</th>
+                                    <th style="width: 38%">Last Backup</th>
                                     <th style="width: 15%">Size</th>
+                                    <th style="width:12%">&nbsp;</th>
                                 </table>
                             </th>
                         </tr>
@@ -130,10 +132,13 @@
                             <td>{{i+1}}</td>
                             <td><i class="fa fa-fw" [ngClass]="{'fa-linux': backup.sys === 'lin','fa-windows': backup.sys === 'win' }" ></i>&nbsp;{{backup.name}}</td>
                             <td>{{backup.group}}</td>
-                            <td>
+                            <td *ngIf="collapseValue === true" class="text-center">
+                                <i *ngIf="backup.LocalBackup.lastbackup != ''" class="fa" [ngClass]="{'success fa-check': backup.LocalBackup.success === 'true','no-success fa-close':backup.LocalBackup.success === 'false' }" aria-hidden="true"></i>
+                            </td>
+                            <td *ngIf="collapseValue === false">
                                 <table width="100%">
                                     <tr>
-                                        <td style="width: 40%">{{backup.LocalBackup.policy}}</td>
+                                        <td style="width: 37%">{{backup.LocalBackup.policy}}</td>
                                         <td style="width: 45%" *ngIf="backup.LocalBackup.lastbackup != ''">
                                             {{backup.LocalBackup.lastbackup | date:'mediumDate'}} {{backup.LocalBackup.lastbackup | date: 'shortTime'}}&nbsp;<i class="fa  " [ngClass]="{'success fa-check': backup.LocalBackup.success === 'true','no-success fa-close':backup.LocalBackup.success === 'false' }" aria-hidden="true"></i>
                                         </td>
@@ -147,17 +152,18 @@
                             <td>
                                 <table width="100%">
                                     <tr>
-                                        <td *ngIf="backup.CloudBackup.policy != ''" style="width: 40%">{{backup.CloudBackup.policy}}</td>
-                                        <td style="width: 45%" *ngIf="backup.CloudBackup.lastbackup != ''">
+                                        <td *ngIf="backup.CloudBackup.policy != ''" style="width: 35%">{{backup.CloudBackup.policy}}</td>
+                                        <td style="width: 35%" *ngIf="backup.CloudBackup.lastbackup != ''">
                                             {{backup.CloudBackup.lastbackup | date:'mediumDate'}} {{backup.CloudBackup.lastbackup | date: 'shortTime'}}&nbsp;<i class="fa  " [ngClass]="{'success fa-check': backup.CloudBackup.success === 'true','no-success fa-close':backup.CloudBackup.success === 'false' }" aria-hidden="true"></i>
                                         </td>
-                                        <td colspn="2" style="width: 45%" *ngIf="backup.CloudBackup.lastbackup === ''">
+                                        <td colspn="2" style="width: 38%" *ngIf="backup.CloudBackup.lastbackup === ''">
                                             <select  (change)="onSelect($event.target.value, backup.name)" name="sel2">
                                                 <option>Select Policy</option>
                                                 <option   *ngFor="#dataPolicy of Policy" [value]="dataPolicy.PolicyName">{{dataPolicy.PolicyName}}</option>
                                             </select>
                                         </td>
                                         <td style="width: 15%">{{backup.CloudBackup.size}}</td>
+                                        <td style="width:12%" ><button *ngIf="backup.CloudBackup.lastbackup != ''" class="btn-xs btn-success" style="color:white;font-size:11px;"><i class="fa fa-play"></i>&nbsp;RUN</button></td>
                                     </tr>
                                 </table>
                             </td>

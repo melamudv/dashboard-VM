@@ -26,12 +26,14 @@ export class CatalogBackupComponent implements OnInit {
     namePolicy:any;
     valuePolicy: Object;
     n : number;
+    collapseValue: any;
     result: Object;
     VCenter: Array<Object>[];
     Policy: Array<Object>[];
     ngOnInit() {
-       this.dataPolicy = {};
+        this.dataPolicy = {};
         this.data = {};
+        this.collapseValue = true;
         this.http.get(`/app/backup/data.json`)
             .map(response => response.json().VCenter)
             .subscribe(
@@ -52,6 +54,9 @@ export class CatalogBackupComponent implements OnInit {
     }
     refresh() {
         this.ngOnInit();
+    }
+    collapseMenu(valueTrigger:any){
+        this.collapseValue = !valueTrigger;
     }
 }
 

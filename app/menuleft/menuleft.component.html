@@ -32,9 +32,20 @@
         <i class='icon-table'></i>
         <a  [routerLink]="['/dashboard']">Networking</a>
     </li>
-    <li class='launcher'>
+    <li class='launcher dropdown hover'>
         <i class='icon-bug'></i>
         <a  [routerLink]="['/dashboard']">Policies</a>
+        <ul class='dropdown-menu'>
+            <li>
+                <a href='#'>Storage</a>
+            </li>
+            <li>
+                <a href='#'>Compute</a>
+            </li>
+            <li>
+                <a href='#'>Data Protection</a>
+            </li>
+        </ul>
     </li>
 </ul>
 <div data-toggle='tooltip' id='beaker' title='Made by lab2023'></div>

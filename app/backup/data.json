@@ -1,6 +1,6 @@
 {
 	"VCenter": [{
-		"nameVCenter": "VCenter-1",
+		"nameVCenter": "Acme Site 1",
 		"VM": [{
 			"name": "VM001",
 			"group": "Application_1",
@@ -58,7 +58,7 @@
 				"disable": "true",
 				"restore": "true",
 				"restorePercent": "60",
-				"policy": "Weekly",
+				"policy": "",
 				"lastbackup": "2001-12-19T00:00:00",
 				"size": "120GB",
 				"success": "false"
