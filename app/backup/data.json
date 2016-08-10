@@ -2,8 +2,8 @@
 	"VCenter": [{
 		"nameVCenter": "Acme Site 1",
 		"VM": [{
-			"name": "VM001",
-			"group": "Application_1",
+			"name": "DB Server 01",
+			"group": "CRM_Prod",
 			"sys":	"win",
 			"LocalBackup": {
 				"enable": "true",
@@ -26,8 +26,8 @@
 				"success": "true"
 			}
 		}, {
-			"name": "VM003",
-			"group": "Application_2",
+			"name": "DB server 02",
+			"group": "CRM_Prod",
 			"sys":	"lin",
 			"LocalBackup": {
 				"enable": "true",
@@ -50,8 +50,8 @@
 				"success": "false"
 			}
 		}, {
-			"name": "DB_server01",
-			"group": "CRM_prod",
+			"name": "App Server 01",
+			"group": "CRM_Prod",
 			"sys":	"win",
 			"LocalBackup": {
 				"enable": "true",
@@ -74,8 +74,8 @@
 				"success": ""
 			}
 		}, {
-			"name": "DB_server02",
-			"group": "CRM_prod",
+			"name": "Web Server 1",
+			"group": "Web Servers",
 			"sys":	"lin",
 			"LocalBackup": {
 				"enable": "true",
@@ -98,8 +98,8 @@
 				"success": "false"
 			}
 		}, {
-			"name": "VM001",
-			"group": "CRM_prod",
+			"name": "Web Server 2",
+			"group": "Web Servers",
 			"sys":	"win",
 			"LocalBackup": {
 				"enable": "true",
