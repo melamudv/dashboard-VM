@@ -18,3 +18,7 @@
 .no-success{
     color:red;
 }
+.navbar-default
+{
+    border-bottom: 4px solid #000;
+}
