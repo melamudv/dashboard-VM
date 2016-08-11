@@ -4,8 +4,8 @@ import { Http, Response } from '@angular/http';
 import { MODAL_DIRECTIVES, ModalComponent  } from 'ng2-bs3-modal/ng2-bs3-modal';
 import values = require("core-js/fn/array/values");
 import { ArrayFilterPipe } from './array-filter.pipe';
-import { MenuLeft } from './../menuleft/menuleft.component';
-import { HeaderTop } from './../header/header.component';
+import { MenuLeft } from './../includes/menuleft/menuleft.component';
+import { HeaderTop } from './../includes/header/header.component';
 
 
 @Component({

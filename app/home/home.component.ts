@@ -4,7 +4,7 @@ import 'rxjs/add/operator/toPromise';
 import { MODAL_DIRECTIVES  } from 'ng2-bs3-modal/ng2-bs3-modal';
 import values = require("core-js/fn/array/values");
 import { ArrayFilterPipe } from './array-filter.pipe';
-import { MenuLeft } from './../menuleft/menuleft.component';
+import { MenuLeft } from './../includes/menuleft/menuleft.component';
 
 
 @Component({
