@@ -5,11 +5,12 @@ import { MODAL_DIRECTIVES, ModalComponent  } from 'ng2-bs3-modal/ng2-bs3-modal';
 import values = require("core-js/fn/array/values");
 import { ArrayFilterPipe } from './array-filter.pipe';
 import { MenuLeft } from './../menuleft/menuleft.component';
+import { HeaderTop } from './../header/header.component';
 
 
 @Component({
     selector: 'catalog-backup',
-    directives: [MODAL_DIRECTIVES, MenuLeft],
+    directives: [MODAL_DIRECTIVES, MenuLeft, HeaderTop],
     pipes: [ArrayFilterPipe],
     templateUrl: 'app/backup/backup.component.html',
     styleUrls: ['app/backup/backup.component.css']

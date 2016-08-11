@@ -6,12 +6,13 @@ import { MODAL_DIRECTIVES  } from 'ng2-bs3-modal/ng2-bs3-modal';
 import values = require("core-js/fn/array/values");
 import { ArrayFilterPipe } from './array-filter.pipe';
 import { MenuLeft } from './../menuleft/menuleft.component';
+import { HeaderTop } from './../header/header.component';
 
 
 
 @Component({
   selector: 'my-dashboard',
-  directives: [MODAL_DIRECTIVES, MenuLeft],
+  directives: [MODAL_DIRECTIVES, MenuLeft, HeaderTop],
   pipes: [ArrayFilterPipe],
   templateUrl: 'app/dashboard/dashboard.component.html',
   styleUrls: ['app/dashboard/dashboard.component.css']
