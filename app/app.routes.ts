@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CatalogBackupComponent } from './backup/backup.component';
+import { PoliciesDataProtection } from './policies/viewpolicie/viewpolicie.component';
 
 
 const routes: RouterConfig = [
@@ -22,7 +23,10 @@ const routes: RouterConfig = [
 {
   path: 'catalog/backup',
   component: CatalogBackupComponent
-}
+},{
+    path: 'policies/data-protection',
+    component: PoliciesDataProtection
+  }
 
 ];
 

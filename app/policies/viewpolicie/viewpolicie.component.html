@@ -1,0 +1,51 @@
+<div class='main page'>
+    <header-top></header-top>
+    <div id='wrapper'>
+        <!-- Sidebar -->
+        <section id='sidebar'>
+            <menu-left></menu-left>
+        </section>
+
+        <!-- Tools -->
+        <section id='tools'>
+            <ul class='breadcrumb' id='breadcrumb'>
+                <li class='title'>Policies</li>
+                <li class='title'>Data Protection </li>
+                <li class='title'>View</li>
+                <li class="pull-right col-xs-7 before-remove" >
+                    <div class='col-md-5 pull-right fix-top '>
+                        <div class='input-group'>
+                            <input class='form-control' placeholder='Quick search...' type='text'  [(ngModel)]="searchQuick">
+                  <span class='input-group-btn'>
+                    <button class='btn' type='button'>
+                      <i class='icon-search'></i>
+                    </button>
+                  </span>
+                        </div>
+                    </div>
+                </li>
+                <li><button class="btn fix-top btn-danger" (click)="refresh()" style="color:white"><i class="fa fa-refresh"></i>&nbsp;Refresh</button></li>
+            </ul>
+
+            <div id='toolbar'>
+            </div>
+        </section>
+        <!-- Content -->
+        <div id='content'>
+            <div class='panel panel-default grid'>
+                <div class='panel-heading' style="height: 46px">
+                    <div class="col-xs-11">
+                        <i class='icon-table icon-large'></i>
+                        View
+                    </div>
+                    <div class="col-xs-1">
+                        <button class="btn fix-top btn-success" (click)="modalSubmit.open()" style="color:white">New Policy</button>
+                    </div>
+                </div>
+                <div class='panel-body'>
+                    <h1>Policy View</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
