@@ -1,0 +1,22 @@
+#tools #breadcrumb{
+    padding-top:10px;
+}
+.no-float{
+     min-height:150px;
+     height:150px;
+     color: #000000;
+     font-size:14px;
+    margin-bottom:10px;
+ }
+.no-float a{
+    color: #000000;
+}
+.title{
+    font-size:26px;
+    font-weight: bold;
+    padding-bottom: 15px;
+    color:#000;
+}
+.list-group-item{
+    background-color: #ecf0f1;
+}

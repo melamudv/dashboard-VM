@@ -36,42 +36,14 @@
                 <div class='panel-heading' style="height: 46px">
                     <div class="col-xs-11">
                         <i class='icon-table icon-large'></i>
-                        Policy
+                       New Policy
                     </div>
                     <div class="col-xs-1">
-                        <button class="btn fix-top btn-success" (click)="newPolicy()" style="color:white;margin-top:-4px;" [ngClass]="{'disabled':logUser === 'annie' }">New Policy</button>
+                        <button class="btn fix-top btn-success" (click)="newPolicy" style="color:white;margin-top:-4px;" [ngClass]="{'disabled':logUser === 'annie' }">Save</button>
                     </div>
                 </div>
                 <div class='panel-body'>
-                    <table class='table table-bordered'>
-                        <thead>
-                        <tr>
-                            <th style="width:2%">#</th>
-                            <th style="width:15%">Policy Type</th>
-                            <th style="width:15%">Policy Name</th>
-                            <th style="width:50%">Description</th>
-                            <th style="width:18%">Actions</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr *ngFor="#dataPolicy of Policy;#i = index">
-                            <td>{{i+1}}</td>
-                            <td>{{dataPolicy.PolicyType}}</td>
-                            <td>{{dataPolicy.PolicyName}}</td>
-                            <td>{{dataPolicy.description}}</td>
-                            <td>
-                                <table>
-                                    <tr>
-                                        <td><button class="btn-xs btn-primary">edit</button>&nbsp;&nbsp;</td>
-                                        <td><button class="btn-xs btn-info">info</button>&nbsp;&nbsp;</td>
-                                        <td><button class="btn-xs btn-danger">delete</button></td>
-
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                   <h1>New Policy</h1>
                 </div>
             </div>
         </div>

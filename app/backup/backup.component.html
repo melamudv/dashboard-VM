@@ -24,7 +24,7 @@
                         </div>
                     </div>
                 </li>
-                <li><button class="btn fix-top btn-danger" (click)="refresh()" style="color:white"><i class="fa fa-refresh"></i>&nbsp;Refresh</button></li>
+                <li><button class="btn fix-top btn-danger" (click)="refresh()" style="color:white" ><i class="fa fa-refresh"></i>&nbsp;Refresh</button></li>
             </ul>
 
             <div id='toolbar'>
@@ -39,7 +39,7 @@
                         {{data.nameVCenter}}
                     </div>
                     <div class="col-xs-1">
-                    <button class="btn fix-top btn-success" (click)="modalSubmit.open()" style="color:white">Submit</button>
+                    <button class="btn fix-top btn-success" (click)="modalSubmit.open()" style="color:white" [ngClass]="{'disabled':logUser === 'ian' }" >Submit</button>
                     </div>
                 </div>
                 <div class='panel-body'>

@@ -1,0 +1,105 @@
+<div class='main page'>
+    <header-top></header-top>
+    <div id='wrapper'>
+        <!-- Sidebar -->
+        <section id='sidebar'>
+            <menu-left></menu-left>
+        </section>
+
+        <!-- Tools -->
+        <section id='tools'>
+            <ul class='breadcrumb' id='breadcrumb'>
+                <li class='title'>Catalog</li>
+                <li class='title'>Service Catalog</li>
+                <li class="pull-right col-xs-7 before-remove" >
+                    <div class='col-md-5 pull-right fix-top '>
+                        <div class='input-group'>
+                            <input class='form-control' placeholder='Quick search...' type='text'  [(ngModel)]="searchQuick">
+                  <span class='input-group-btn'>
+                    <button class='btn' type='button'>
+                      <i class='icon-search'></i>
+                    </button>
+                  </span>
+                        </div>
+                    </div>
+                </li>
+                <li><button class="btn fix-top btn-danger" (click)="refresh()" style="color:white"><i class="fa fa-refresh"></i>&nbsp;Refresh</button></li>
+            </ul>
+
+            <div id='toolbar'>
+            </div>
+        </section>
+        <!-- Content -->
+        <div id='content'>
+            <div class="row">
+                <div class="col-xs-1"></div>
+                <div class="col-sm-5">
+                    <ul class="list-group">
+                        <li class="list-group-item no-float ">
+                            <div class="col-xs-6 no-float ">
+                                <div class="list-group">
+                                    <a href="#" class="col-xs-12 title">Compute</a>
+                                    <a href="#" class="col-xs-12">Virtual Machines</a>
+                                    <a href="#" class="col-xs-12">Containers</a>
+                                    <a href="#" class="col-xs-12">Load Balancing</a>
+                                </div>
+                            </div>
+                            <div class="col-xs-5 no-float"><i class="fa fa-desktop" style="color:#000;font-size:135px;float:right"></i></div>
+                        </li>
+                        <li class="list-group-item no-float">
+                            <div class="col-xs-6 no-float">
+                                <div class="list-group">
+                                    <a href="#" class="col-xs-12 title">Storage</a>
+                                    <a href="#" class="col-xs-12">Object Store</a>
+                                    <a href="#" class="col-xs-12">Block Storage</a>
+                                    <a href="#" class="col-xs-12">File Systems</a>
+                                    <a href="#" class="col-xs-12">Archive Storage</a>
+                                </div>
+                            </div>
+                            <div class="col-xs-5 no-float"><i class="fa fa-database" style="color:#000;font-size:135px;float:right"></i></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-5">
+                    <ul class="list-group">
+                        <li class="list-group-item no-float">
+                            <div class="col-xs-6 no-float">
+                                <div class="list-group">
+                                    <a href="#" class="col-xs-12 title">Data Protection</a>
+                                    <a href="#" class="col-xs-12">Backup</a>
+                                    <a href="#" class="col-xs-12">Disaster Recovery</a>
+                                    <a href="#" class="col-xs-12">Long Term Retention</a>
+                                </div>
+                            </div>
+                            <div class="col-xs-5 no-float"><i class="fa fa-shield" style="color:#000;font-size:135px;float:right"></i></div>
+                        </li>
+                        <li class="list-group-item no-float">
+                            <div class="col-xs-6 no-float">
+                                <div class="list-group">
+                                    <a href="#" class="col-xs-12 title">Applications</a>
+                                    <a href="#" class="col-xs-12">Cloud Search</a>
+                                    <a href="#" class="col-xs-12">API Gateway</a>
+                                    <a href="#" class="col-xs-12">Mobile Apps</a>
+                                    <a href="#" class="col-xs-12">Enterprise Applications</a>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 no-float">icon</div>
+                        </li>
+                        <li class="list-group-item no-float">
+                            <div class="col-xs-6 no-float">
+                                <div class="list-group">
+                                    <a href="#" class="col-xs-12 title">Databases</a>
+                                    <a href="#" class="col-xs-12">DB Migration</a>
+                                    <a href="#" class="col-xs-12">Relational Database</a>
+                                    <a href="#" class="col-xs-12">No SQL</a>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 no-float">icon</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+        </div>
+    </div>
+</div>

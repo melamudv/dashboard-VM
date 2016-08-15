@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit{
 
     }
     data: any;
+    loggedIn: any;
     result: Object;
     ngOnInit() {
         this.data = {};
@@ -34,8 +35,20 @@ export class LoginComponent implements OnInit{
     };
     dataForm = {};
     forSubmit(){
-        if(this.data.username == 'admin' && this.data.password == 'admin'){           
+        if(this.data.username == 'admin' && this.data.password == 'admin'){
             this._router.navigate(['/catalog/backup']);
+        }
+            else if (this.data.username == 'annie' && this.data.password == 'annie'){
+            localStorage.setItem('auth_token', 'annie');
+            localStorage.setItem('id_token', 'annie');
+            this.loggedIn = true;
+            this._router.navigate(['/catalog/dashboard']);
+        }
+        else if (this.data.username == 'ian' && this.data.password == 'ian'){
+            localStorage.setItem('auth_token', 'ian');
+            localStorage.setItem('id_token', 'ian');
+            this.loggedIn = true;
+            this._router.navigate(['/policies/data-protection']);
         }
         else{
             console.log('Who the f are you');

@@ -22,6 +22,7 @@ export class CatalogBackupComponent implements OnInit {
     constructor(private http: Http) {
         this.http = http;
     }
+    logUser : any;
     data: any;
     dataPolicy:any;
     namePolicy:any;
@@ -47,6 +48,7 @@ export class CatalogBackupComponent implements OnInit {
                 dataPolicy => this.Policy = dataPolicy,
                 error => console.log(error)
             );
+        this.logUser = localStorage.getItem('auth_token');
 
     }
     onSelect(valuePolicy:any, valueName:any) {

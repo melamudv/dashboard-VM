@@ -12,27 +12,20 @@ import { HeaderTop } from './../../includes/header/header.component';
     selector: 'my-dashboard',
     directives: [MODAL_DIRECTIVES, MenuLeft, HeaderTop, ROUTER_DIRECTIVES],
     pipes: [ArrayFilterPipe],
-    templateUrl: 'app/policies/viewpolicie/viewpolicie.component.html',
-    styleUrls: ['app/policies/viewpolicie/viewpolicie.component.css']
+    templateUrl: 'app/catalog/dashboard/dashboard.component.html',
+    styleUrls: ['app/catalog/dashboard/dashboard.component.css']
 })
-export class PoliciesDataProtection implements OnInit {
+export class CatalogDashboardComponent implements OnInit {
+    logUser: any;
     constructor(private http: Http, private _router: Router) {
         this.http = http;
         this._router = _router;
     }
-    Policy: Array<Object>[];
-    logUser: any;
+
     ngOnInit() {
-        this.http.get(`/app/backup/policy.json`)
-            .map(response => response.json().Policy)
-            .subscribe(
-                dataPolicy => this.Policy = dataPolicy,
-                error => console.log(error)
-            );
+
         this.logUser = localStorage.getItem('auth_token');
     }
-    newPolicy(){
-        this._router.navigate(['/policies/data-protection/new']);
-    }
+
 }
 
