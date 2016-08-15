@@ -26,7 +26,7 @@ export class CatalogBackupComponent implements OnInit {
     data: any;
     dataPolicy:any;
     namePolicy:any;
-    valuePolicy: Object;
+    valuePolicySelect: any;
     n : number;
     collapseValue: any;
     result: Object;
@@ -52,6 +52,8 @@ export class CatalogBackupComponent implements OnInit {
 
     }
     onSelect(valuePolicy:any, valueName:any) {
+
+        this.valuePolicySelect = valuePolicy
         this.namePolicy = valueName;
         this.modal.open(valueName);
     }

@@ -104,10 +104,10 @@
                                         <td style="width: 35%" *ngIf="backup.CloudBackup.lastbackup != ''">
                                             {{backup.CloudBackup.lastbackup | date:'mediumDate'}} {{backup.CloudBackup.lastbackup | date: 'shortTime'}}&nbsp;<i class="fa  " [ngClass]="{'success fa-check': backup.CloudBackup.success === 'true','no-success fa-close':backup.CloudBackup.success === 'false' }" aria-hidden="true"></i>
                                         </td>
-                                        <td colspn="2" style="width: 38%" *ngIf="backup.CloudBackup.lastbackup === ''">
+                                        <td colspn="2" style="width: 38%" *ngIf="backup.CloudBackup.lastbackup === ''" class="row1-3home">
                                             <select  (change)="onSelect($event.target.value, backup.name)" name="sel2">
                                                 <option>Select Policy</option>
-                                                <option   *ngFor="#dataPolicy of Policy" [value]="dataPolicy.PolicyName">{{dataPolicy.PolicyName}}</option>
+                                                <option   *ngFor="#dataPolicy of Policy" [value]="dataPolicy.PolicyName" [ngClass]="{'selectedRed': dataPolicy.PolicyName === valuePolicySelect }">{{dataPolicy.PolicyName}}</option>
                                             </select>
                                         </td>
                                         <td style="width: 15%">{{backup.CloudBackup.size}}</td>
@@ -117,13 +117,15 @@
                             </td>
                             <modal #modal>
                                 <modal-header [show-close]="true">
-                                    <h2 class="modal-title">Local Backup Required</h2>
+                                    <h3 class="modal-title"><i class="fa fa-info-circle"></i>&nbsp;Local Backup Required</h3>
                                 </modal-header>
                                 <modal-body>
-                                    <h3>Local backup is required to activate cloud backup<br>
-                                        Add local backup policy for VM: <strong>{{namePolicy}}</strong></h3>
+                                    <h3>To enable cloud backup, a local backup policy will be added for VM <strong>{{namePolicy}}</strong></h3>
                                 </modal-body>
-                                <modal-footer [show-default-buttons]="true"></modal-footer>
+                                <modal-footer [show-default-buttons]="false">
+                                    <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+                                    <button class="btn btn-primary" type="button">Submit</button>
+                                </modal-footer>
                             </modal>
                         </tr>
                         <modal #modalSubmit>

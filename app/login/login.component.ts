@@ -38,13 +38,13 @@ export class LoginComponent implements OnInit{
         if(this.data.username == 'admin' && this.data.password == 'admin'){
             this._router.navigate(['/catalog/backup']);
         }
-            else if (this.data.username == 'annie' && this.data.password == 'annie'){
+            else if (this.data.username == 'Annie@acme' && this.data.password == 'Annie@acme'){
             localStorage.setItem('auth_token', 'annie');
             localStorage.setItem('id_token', 'annie');
             this.loggedIn = true;
             this._router.navigate(['/catalog/dashboard']);
         }
-        else if (this.data.username == 'ian' && this.data.password == 'ian'){
+        else if (this.data.username == 'Ian@acme' && this.data.password == 'Ian@acme'){
             localStorage.setItem('auth_token', 'ian');
             localStorage.setItem('id_token', 'ian');
             this.loggedIn = true;

@@ -18,3 +18,10 @@
 .no-success{
     color:red;
 }
+.selectedRed{
+    background-color: red;
+    color:#fff;
+}
+
+.row1-3home  option:checked { background-color: red;
+    color:#fff; }

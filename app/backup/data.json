@@ -37,7 +37,7 @@
 				"policy": "Weekly",
 				"lastbackup": "2001-12-19T00:00:00",
 				"size": "133GB",
-				"success": "false"
+				"success": "true"
 			},
 			"CloudBackup": {
 				"enable": "true",
@@ -61,7 +61,7 @@
 				"policy": "",
 				"lastbackup": "2001-12-19T00:00:00",
 				"size": "120GB",
-				"success": "false"
+				"success": "true"
 			},
 			"CloudBackup": {
 				"enable": "true",
@@ -121,7 +121,80 @@
 				"size": "",
 				"success": "false"
 			}
-		}]
+		}, {
+			"name": "My VM 001",
+			"group": "",
+			"sys":	"win",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "true",
+				"restore": "true",
+				"restorePercent": "60",
+				"policy": "",
+				"lastbackup": "",
+				"size": "",
+				"success": "false"
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "20",
+				"policy": "",
+				"lastbackup": "",
+				"size": "",
+				"success": "false"
+			}
+		}, {
+			"name": "My VM 002",
+			"group": "",
+			"sys":	"win",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "true",
+				"restore": "true",
+				"restorePercent": "60",
+				"policy": "",
+				"lastbackup": "",
+				"size": "",
+				"success": "false"
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "20",
+				"policy": "",
+				"lastbackup": "",
+				"size": "",
+				"success": "false"
+			}
+		}, {
+			"name": "My VM 003",
+			"group": "",
+			"sys":	"win",
+			"LocalBackup": {
+				"enable": "true",
+				"disable": "true",
+				"restore": "true",
+				"restorePercent": "60",
+				"policy": "",
+				"lastbackup": "",
+				"size": "",
+				"success": "false"
+			},
+			"CloudBackup": {
+				"enable": "true",
+				"disable": "false",
+				"rehydrate": "true",
+				"rehydratePercent": "20",
+				"policy": "",
+				"lastbackup": "",
+				"size": "",
+				"success": "false"
+			}
+		}
+		]
 
 	}]
 }
