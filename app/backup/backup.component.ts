@@ -30,6 +30,7 @@ export class CatalogBackupComponent implements OnInit {
     n : number;
     collapseValue: any;
     result: Object;
+    VmNames:any;
     VCenter: Array<Object>[];
     Policy: Array<Object>[];
     ngOnInit() {
@@ -63,5 +64,11 @@ export class CatalogBackupComponent implements OnInit {
     collapseMenu(valueTrigger:any){
         this.collapseValue = !valueTrigger;
     }
+    addVm(VmName:any){
+        this.VmNames = VmName;
+        //this.ngOnInit();
+        this.modal.close();
+    }
+
 }
 
