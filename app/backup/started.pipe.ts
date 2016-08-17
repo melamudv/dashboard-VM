@@ -13,7 +13,7 @@ import { Pipe, PipeTransform, Injectable, Component} from "@angular/core";
 
 @Injectable()
 export class StartedPipe implements PipeTransform {
-    transform(Policy: any[], args: any[]): any {
+    transform(Policy: any[], args: any): any {
         if (Policy==null) {
             return null;
         }
