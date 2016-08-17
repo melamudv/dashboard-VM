@@ -21,6 +21,7 @@ export class CatalogBackupComponent implements OnInit {
     modal: ModalComponent;
     constructor(private http: Http) {
         this.http = http;
+        this.vmAdd = [];
     }
     logUser : any;
     data: any;
@@ -30,7 +31,7 @@ export class CatalogBackupComponent implements OnInit {
     n : number;
     collapseValue: any;
     result: Object;
-    VmNames:any;
+    vmAdd:   Array<Object>[];
     VCenter: Array<Object>[];
     Policy: Array<Object>[];
     ngOnInit() {
@@ -52,8 +53,7 @@ export class CatalogBackupComponent implements OnInit {
         this.logUser = localStorage.getItem('auth_token');
 
     }
-    onSelect(valuePolicy:any, valueName:any) {
-
+    onSelect(valuePolicy:any, valueName:any) {        
         this.valuePolicySelect = valuePolicy
         this.namePolicy = valueName;
         this.modal.open(valueName);
@@ -64,10 +64,34 @@ export class CatalogBackupComponent implements OnInit {
     collapseMenu(valueTrigger:any){
         this.collapseValue = !valueTrigger;
     }
-    addVm(VmName:any){
-        this.VmNames = VmName;
-        //this.ngOnInit();
+    addVm(vmName:any, policyName:any){
+        console.log("Policy Name",policyName);
+        if(policyName === "Select Policy"){
+            this.removeVm(vmName) ;
+        }
+        else{
+                this.vmAdd.push(vmName);
+        }
+
+        console.log(this.vmAdd);       
         this.modal.close();
+        this.checkRed(vmName);
+    }
+    checkRed(value:any){
+         for (let field in this.vmAdd) {
+            if (value === this.vmAdd[field]) {
+                return true;
+            }
+        }
+            return false ;
+
+    }
+    removeVm(vm:any){
+           for (let field in this.vmAdd) {
+                 if (vm === this.vmAdd[field]) {
+                    this.vmAdd.slice(vm);
+                 }
+           }
     }
 
 }

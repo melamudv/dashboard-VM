@@ -78,7 +78,7 @@
                         <tbody>
                         <tr  *ngFor='let backup of data.VM | filter:searchQuick;#i = index '>
                             <td>{{i+1}}</td>
-                            <td [ngClass]="{'selectedRed1': backup.name === VmNames }"><i class="fa fa-fw" [ngClass]="{'fa-linux': backup.sys === 'lin','fa-windows': backup.sys === 'win' }" ></i>&nbsp;{{backup.name}}</td>
+                            <td [ngClass]="{'selectedRed': checkRed(backup.name) }" ><i class="fa fa-fw" [ngClass]="{'fa-linux': backup.sys === 'lin','fa-windows': backup.sys === 'win' }" ></i>&nbsp;{{backup.name}}</td>
 
                             <td>{{backup.group}}</td>
                             <td *ngIf="collapseValue === true" class="text-center">
@@ -107,8 +107,8 @@
                                         </td>
                                         <td colspn="2" style="width: 38%" *ngIf="backup.CloudBackup.lastbackup === ''">
                                             <select  (change)="onSelect($event.target.value, backup.name)" name="sel2">
-                                                <option>Select Policy</option>
-                                                <option   *ngFor="#dataPolicy of Policy" [value]="dataPolicy.PolicyName" [ngClass]="{'selectedRed1': dataPolicy.PolicyName === valuePolicySelect }">{{dataPolicy.PolicyName}}</option>
+                                                <option [value]="">Select Policy</option>
+                                                <option *ngFor="#dataPolicy of Policy" [value]="dataPolicy.PolicyName" [ngClass]="{'selectedRed1': dataPolicy.PolicyName === valuePolicySelect }">{{dataPolicy.PolicyName}}</option>
                                             </select>
                                         </td>
                                         <td style="width: 15%">{{backup.CloudBackup.size}}</td>
@@ -124,8 +124,8 @@
                                     <h3>To enable cloud backup, a local backup policy will be added for VM <strong>{{namePolicy}}</strong></h3>
                                 </modal-body>
                                 <modal-footer [show-default-buttons]="false">
-                                    <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
-                                    <button class="btn btn-primary" (click)="addVm(namePolicy)" type="button">Submit</button>
+                                    <button class="btn btn-default" data-dismiss="modal" type="button">Cancel</button>
+                                    <button class="btn btn-primary" (click)="addVm(namePolicy,valuePolicySelect)" type="button">OK</button>
                                 </modal-footer>
                             </modal>
                         </tr>
@@ -138,7 +138,10 @@
                                 <div><h4>Total monthly Storage : <strong>250GB</strong></h4></div><br>
                                 <div><h4> Estimated Monthly Cost: <strong>37$</strong></h4></div>
                             </modal-body>
-                            <modal-footer [show-default-buttons]="true"></modal-footer>
+                            <modal-footer [show-default-buttons]="false">
+                                <button class="btn btn-default" data-dismiss="modal" type="button">Cancel</button>
+                                <button class="btn btn-primary" (click)="addVm(namePolicy)" type="button">Submit</button>
+                            </modal-footer>
                         </modal>
                         </tbody>
                     </table>

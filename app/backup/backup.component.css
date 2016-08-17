@@ -19,6 +19,6 @@
     color:red;
 }
 .selectedRed{
-    background-color: red;
+    background-color: #d43f3a !important;
     color:#fff;
 }
