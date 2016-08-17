@@ -25,13 +25,13 @@
                         <i class='icon-table icon-large'></i>
                        New Policy
                     </div>
-                    <div class="col-xs-1">
-                        <button class="btn fix-top btn-success" (click)="newPolicy" style="color:white;margin-top:-4px;" [ngClass]="{'disabled':logUser === 'annie' }">Save</button>
-                    </div>
+                    <!--<div class="col-xs-1">-->
+                        <!--<button class="btn fix-top btn-success" (click)="newPolicy" style="color:white;margin-top:-4px;" [ngClass]="{'disabled':logUser === 'annie' }">Save</button>-->
+                    <!--</div>-->
                 </div>
                 <div class='panel-body'>
                     <form>
-                        <fieldset>
+                        <fieldset class="col-xs-6">
                             <div class='form-group'>
                                 <label class='control-label'>Policy Type:</label>
                                 <select class='form-control'>
@@ -161,9 +161,9 @@
                                 </select>
                             </div>
                         </fieldset>
-                        <div class='form-actions'>
-                            <button class='btn btn-default' type='submit'>Submit</button>
-                            <a class='btn' href='#'>Cancel</a>
+                        <div class='form-actions col-xs-12'>
+                            <button class='btn btn-success' type='submit'>Submit</button>
+                            <a class='btn btn-danger' href='#'>Cancel</a>
                         </div>
                     </form>
                 </div>

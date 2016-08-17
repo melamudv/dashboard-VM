@@ -7,6 +7,7 @@ var backup_component_1 = require('./backup/backup.component');
 var viewpolicie_component_1 = require('./policies/viewpolicie/viewpolicie.component');
 var newpolicie_component_1 = require('./policies/newpolicie/newpolicie.component');
 var dashboard_component_2 = require('./catalog/dashboard/dashboard.component');
+var under_component_1 = require('./under/under.component');
 var routes = [
     {
         path: '',
@@ -32,6 +33,9 @@ var routes = [
     }, {
         path: 'catalog/dashboard',
         component: dashboard_component_2.CatalogDashboardComponent
+    }, {
+        path: 'under',
+        component: under_component_1.underConstructorComponent
     }
 ];
 exports.appRouterProviders = [

@@ -1,23 +1,38 @@
 {	
 	"Policy": [{
-		"PolicyType": "backup",
+		"PolicyType": "Backup",
 		"PolicyName": "Gold Daily",
 		"id":	"0001",
 		"description": "Full weekly backup, 6 months retention + archive"	
 	}, {
-		"PolicyType": "backup",
+		"PolicyType": "Backup",
 		"PolicyName": "Gold Weekly",
 		"id":	"0002",
 		"description": "Full weekly backup, 6 months retention + archive"	
 	}, {
-		"PolicyType": "backup",
+		"PolicyType": "Backup",
 		"PolicyName": "Silver Weekly",
 		"id":	"0003",
 		"description": "Full daily backup, 6 months retention + archive"
 	}, {
-		"PolicyType": "backup",
+		"PolicyType": "Backup",
 		"PolicyName": "Bronze Monthly",
 		"id":	"0004",
 		"description": "Full daily backup, 6 months retention + archive"
+	}, {
+		"PolicyType": "Disaster Recovery",
+		"PolicyName": "Platinum  DR",
+		"id":	"0005",
+		"description": "Tier-1 Disaster Recovery, 15 minutes RPO"
+	}, {
+		"PolicyType": "Disaster Recovery",
+		"PolicyName": "Platinum Plus DR ",
+		"id":	"0006",
+		"description": "Tier-1 Disaster Recovery, 15 minutes RPO + 6 months retention"
+	}, {
+		"PolicyType": "Replication",
+		"PolicyName": "Replication 1",
+		"id":	"0007",
+		"description": "Asynchronous snapshot replication"
 	}]
 }

@@ -7,6 +7,7 @@ import { CatalogBackupComponent } from './backup/backup.component';
 import { PoliciesDataProtection } from './policies/viewpolicie/viewpolicie.component';
 import { newPoliciesDataProtection } from './policies/newpolicie/newpolicie.component';
 import { CatalogDashboardComponent } from './catalog/dashboard/dashboard.component';
+import { underConstructorComponent } from './under/under.component';
 const routes: RouterConfig = [
   {
     path: '',
@@ -32,6 +33,9 @@ const routes: RouterConfig = [
   },{
     path: 'catalog/dashboard',
     component: CatalogDashboardComponent
+  },{
+    path: 'under',
+    component: underConstructorComponent
   }
 
 ];
