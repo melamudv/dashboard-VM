@@ -1,9 +1,10 @@
-import { Pipe, PipeTransform } from "@angular/core";
+import { Pipe, PipeTransform,Injectable } from "@angular/core";
 
 @Pipe({
     name: "filter",
     pure: false
 })
+@Injectable()
 export class ArrayFilterPipe implements PipeTransform {
 
     transform(items: Array<any>, conditions: {[field: string]: any}): Array<any> {

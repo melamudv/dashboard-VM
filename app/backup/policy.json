@@ -3,22 +3,22 @@
 		"PolicyType": "Backup",
 		"PolicyName": "Gold Daily",
 		"id":	"0001",
-		"description": "Full weekly backup, 6 months retention + archive"	
+		"description": "Full Daily backup, 3 months retention + archive"	
 	}, {
 		"PolicyType": "Backup",
 		"PolicyName": "Gold Weekly",
 		"id":	"0002",
-		"description": "Full weekly backup, 6 months retention + archive"	
+		"description": "Full Weekly backup, 6 months retention + archive"	
 	}, {
 		"PolicyType": "Backup",
 		"PolicyName": "Silver Weekly",
 		"id":	"0003",
-		"description": "Full daily backup, 6 months retention + archive"
+		"description": "Full Weekly backup, 6 months retention"
 	}, {
 		"PolicyType": "Backup",
 		"PolicyName": "Bronze Monthly",
 		"id":	"0004",
-		"description": "Full daily backup, 6 months retention + archive"
+		"description": "Full Monthly backup, 12 months retention"
 	}, {
 		"PolicyType": "Disaster Recovery",
 		"PolicyName": "Platinum  DR",

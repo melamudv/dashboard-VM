@@ -4,6 +4,7 @@ import { Http, Response } from '@angular/http';
 import { MODAL_DIRECTIVES, ModalComponent  } from 'ng2-bs3-modal/ng2-bs3-modal';
 import values = require("core-js/fn/array/values");
 import { ArrayFilterPipe } from './array-filter.pipe';
+import { StartedPipe } from './started.pipe';
 import { MenuLeft } from './../includes/menuleft/menuleft.component';
 import { HeaderTop } from './../includes/header/header.component';
 
@@ -11,7 +12,7 @@ import { HeaderTop } from './../includes/header/header.component';
 @Component({
     selector: 'catalog-backup',
     directives: [MODAL_DIRECTIVES, MenuLeft, HeaderTop],
-    pipes: [ArrayFilterPipe],
+    pipes: [ArrayFilterPipe, StartedPipe],
     templateUrl: 'app/backup/backup.component.html',
     styleUrls: ['app/backup/backup.component.css']
 })
@@ -29,12 +30,14 @@ export class CatalogBackupComponent implements OnInit {
     namePolicy:any;
     valuePolicySelect: any;
     n : number;
+    filterargs:any;
     collapseValue: any;
     result: Object;
     vmAdd:   Array<Object>[];
     VCenter: Array<Object>[];
     Policy: Array<Object>[];
     ngOnInit() {
+        this.filterargs = {PolicyType: 'Backup'};
         this.dataPolicy = {};
         this.data = {};
         this.collapseValue = true;
@@ -70,9 +73,9 @@ export class CatalogBackupComponent implements OnInit {
             this.removeVm(vmName) ;
         }
         else{
-                this.vmAdd.push(vmName);
-        }
 
+        }
+        this.vmAdd.push(vmName);
         console.log(this.vmAdd);       
         this.modal.close();
         this.checkRed(vmName);

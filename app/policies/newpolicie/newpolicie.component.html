@@ -30,8 +30,8 @@
                     <!--</div>-->
                 </div>
                 <div class='panel-body'>
-                    <form>
-                        <fieldset class="col-xs-6">
+                    <form role="form" (ngSubmit)="redirectPage()">>
+                        <fieldset class="col-xs-3">
                             <div class='form-group'>
                                 <label class='control-label'>Policy Type:</label>
                                 <select class='form-control'>
@@ -162,8 +162,8 @@
                             </div>
                         </fieldset>
                         <div class='form-actions col-xs-12'>
-                            <button class='btn btn-success' type='submit'>Submit</button>
-                            <a class='btn btn-danger' href='#'>Cancel</a>
+                            <button class='btn btn-success' type="submit">Submit</button>
+                            <button class='btn btn-danger'  type="submit">Cancel</button>
                         </div>
                     </form>
                 </div>
